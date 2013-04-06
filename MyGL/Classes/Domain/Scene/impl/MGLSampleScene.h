@@ -1,5 +1,5 @@
 //
-//  MGLModel.h
+//  MGLSampleScene.h
 //  MyGL
 //
 //  Created by Olivier Larivain on 4/6/13.
@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MGLModel : NSObject
+#import "MGLScene.h"
+
+@interface MGLSampleScene : NSObject<MGLScene>
+
+@property (nonatomic) CGRect viewportFrame;
 
 @end
