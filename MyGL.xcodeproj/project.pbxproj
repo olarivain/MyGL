@@ -18,10 +18,11 @@
 		003A34D71710BE5F00A7B978 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A34D61710BE5F00A7B978 /* Default.png */; };
 		003A34D91710BE5F00A7B978 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A34D81710BE5F00A7B978 /* Default@2x.png */; };
 		003A34DB1710BE5F00A7B978 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A34DA1710BE5F00A7B978 /* Default-568h@2x.png */; };
-		003A34DD1710BE5F00A7B978 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 003A34DC1710BE5F00A7B978 /* Shader.fsh */; };
-		003A34DF1710BE5F00A7B978 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 003A34DE1710BE5F00A7B978 /* Shader.vsh */; };
-		003A34E21710BE5F00A7B978 /* MGLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A34E11710BE5F00A7B978 /* MGLViewController.m */; };
-		003A34E51710BE5F00A7B978 /* MGLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 003A34E31710BE5F00A7B978 /* MGLViewController.xib */; };
+		003A34F01710C37500A7B978 /* MGLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A34EE1710C37500A7B978 /* MGLViewController.m */; };
+		003A34F11710C37500A7B978 /* MGLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 003A34EF1710C37500A7B978 /* MGLViewController.xib */; };
+		003A34F51710C91A00A7B978 /* MGLShaderProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A34F41710C91A00A7B978 /* MGLShaderProgram.m */; };
+		003A34FB1710CBD000A7B978 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 003A34F71710C96A00A7B978 /* Shader.fsh */; };
+		003A34FC1710CBD000A7B978 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 003A34F81710C96A00A7B978 /* Shader.vsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,11 +41,13 @@
 		003A34D61710BE5F00A7B978 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		003A34D81710BE5F00A7B978 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		003A34DA1710BE5F00A7B978 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		003A34DC1710BE5F00A7B978 /* Shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.fsh; path = Shaders/Shader.fsh; sourceTree = "<group>"; };
-		003A34DE1710BE5F00A7B978 /* Shader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.vsh; path = Shaders/Shader.vsh; sourceTree = "<group>"; };
-		003A34E01710BE5F00A7B978 /* MGLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGLViewController.h; sourceTree = "<group>"; };
-		003A34E11710BE5F00A7B978 /* MGLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGLViewController.m; sourceTree = "<group>"; };
-		003A34E41710BE5F00A7B978 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MGLViewController.xib; sourceTree = "<group>"; };
+		003A34ED1710C37500A7B978 /* MGLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLViewController.h; sourceTree = "<group>"; };
+		003A34EE1710C37500A7B978 /* MGLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLViewController.m; sourceTree = "<group>"; };
+		003A34EF1710C37500A7B978 /* MGLViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MGLViewController.xib; sourceTree = "<group>"; };
+		003A34F31710C91A00A7B978 /* MGLShaderProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLShaderProgram.h; sourceTree = "<group>"; };
+		003A34F41710C91A00A7B978 /* MGLShaderProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLShaderProgram.m; sourceTree = "<group>"; };
+		003A34F71710C96A00A7B978 /* Shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.fsh; sourceTree = "<group>"; };
+		003A34F81710C96A00A7B978 /* Shader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.vsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,13 +98,10 @@
 		003A34CA1710BE5F00A7B978 /* MyGL */ = {
 			isa = PBXGroup;
 			children = (
+				003A34EB1710C37500A7B978 /* Classes */,
 				003A34D31710BE5F00A7B978 /* MGLAppDelegate.h */,
 				003A34D41710BE5F00A7B978 /* MGLAppDelegate.m */,
-				003A34DC1710BE5F00A7B978 /* Shader.fsh */,
-				003A34DE1710BE5F00A7B978 /* Shader.vsh */,
-				003A34E01710BE5F00A7B978 /* MGLViewController.h */,
-				003A34E11710BE5F00A7B978 /* MGLViewController.m */,
-				003A34E31710BE5F00A7B978 /* MGLViewController.xib */,
+				003A34F61710C96A00A7B978 /* Shader */,
 				003A34CB1710BE5F00A7B978 /* Supporting Files */,
 			);
 			path = MyGL;
@@ -119,6 +119,43 @@
 				003A34DA1710BE5F00A7B978 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		003A34EB1710C37500A7B978 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				003A34F21710C8FC00A7B978 /* Domain */,
+				003A34EC1710C37500A7B978 /* MainWindow */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		003A34EC1710C37500A7B978 /* MainWindow */ = {
+			isa = PBXGroup;
+			children = (
+				003A34ED1710C37500A7B978 /* MGLViewController.h */,
+				003A34EE1710C37500A7B978 /* MGLViewController.m */,
+				003A34EF1710C37500A7B978 /* MGLViewController.xib */,
+			);
+			path = MainWindow;
+			sourceTree = "<group>";
+		};
+		003A34F21710C8FC00A7B978 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				003A34F31710C91A00A7B978 /* MGLShaderProgram.h */,
+				003A34F41710C91A00A7B978 /* MGLShaderProgram.m */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		003A34F61710C96A00A7B978 /* Shader */ = {
+			isa = PBXGroup;
+			children = (
+				003A34F71710C96A00A7B978 /* Shader.fsh */,
+				003A34F81710C96A00A7B978 /* Shader.vsh */,
+			);
+			path = Shader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,13 +210,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				003A34FB1710CBD000A7B978 /* Shader.fsh in Resources */,
+				003A34FC1710CBD000A7B978 /* Shader.vsh in Resources */,
 				003A34CF1710BE5F00A7B978 /* InfoPlist.strings in Resources */,
 				003A34D71710BE5F00A7B978 /* Default.png in Resources */,
 				003A34D91710BE5F00A7B978 /* Default@2x.png in Resources */,
 				003A34DB1710BE5F00A7B978 /* Default-568h@2x.png in Resources */,
-				003A34DD1710BE5F00A7B978 /* Shader.fsh in Resources */,
-				003A34DF1710BE5F00A7B978 /* Shader.vsh in Resources */,
-				003A34E51710BE5F00A7B978 /* MGLViewController.xib in Resources */,
+				003A34F11710C37500A7B978 /* MGLViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,7 +229,8 @@
 			files = (
 				003A34D11710BE5F00A7B978 /* main.m in Sources */,
 				003A34D51710BE5F00A7B978 /* MGLAppDelegate.m in Sources */,
-				003A34E21710BE5F00A7B978 /* MGLViewController.m in Sources */,
+				003A34F01710C37500A7B978 /* MGLViewController.m in Sources */,
+				003A34F51710C91A00A7B978 /* MGLShaderProgram.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,14 +243,6 @@
 				003A34CE1710BE5F00A7B978 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		003A34E31710BE5F00A7B978 /* MGLViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				003A34E41710BE5F00A7B978 /* en */,
-			);
-			name = MGLViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
