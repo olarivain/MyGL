@@ -145,8 +145,8 @@ GLfloat gCubeVertexData[216] =
 {
     [EAGLContext setCurrentContext:self.context];
     
-	self.program = [MGLShaderProgram programWithVertex: @"Vertex.vsh"
-										fragmentShader: @"Vertex.fsh"];
+	self.program = [MGLShaderProgram programWithVertex: @"Shader"
+										fragmentShader: @"Shader"];
 	[self.program compile];
 	
 	// Get uniform locations.
