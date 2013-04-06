@@ -13,6 +13,7 @@
 @protocol MGLModel <NSObject>
 
 - (void) setup;
+- (void) update;
 - (void) draw;
 - (void) destroy;
 

@@ -64,7 +64,6 @@ GLfloat gCubeVertexData[216] =
 	GLuint _vertexArray;
     GLuint _vertexBuffer;
 }
-@property (strong, nonatomic) GLKBaseEffect *effect;
 @property (strong, nonatomic) MGLShaderProgram *program;
 @end
 
@@ -74,10 +73,6 @@ GLfloat gCubeVertexData[216] =
 	self.program = [MGLShaderProgram programWithVertex: @"Shader"
 									   fragmentShader: @"Shader"];
 	[self.program compile];
-    
-    self.effect = [[GLKBaseEffect alloc] init];
-    self.effect.light0.enabled = GL_TRUE;
-    self.effect.light0.diffuseColor = GLKVector4Make(1.0f, 0.4f, 0.4f, 1.0f);
     
     glEnable(GL_DEPTH_TEST);
     
@@ -101,18 +96,19 @@ GLfloat gCubeVertexData[216] =
     glDeleteVertexArraysOES(1, &_vertexArray);
 }
 
+- (void) update {
+
+}
+
 - (void) draw {
-	self.effect.transform.projectionMatrix = _projectionMatrix;
-    
-    GLKMatrix4 baseModelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, -4.0f);
-//    baseModelViewMatrix = GLKMatrix4Rotate(baseModelViewMatrix, _rotation, 0.0f, 1.0f, 0.0f);
-    
-    // Compute the model view matrix for the object rendered with GLKit
-    GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, -1.5f);
-	//    modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, _rotation, 1.0f, 1.0f, 1.0f);
-    modelViewMatrix = GLKMatrix4Multiply(baseModelViewMatrix, modelViewMatrix);
-    
-    self.effect.transform.modelviewMatrix = modelViewMatrix;
+	glBindVertexArrayOES(_vertexArray);
+	
+    glDrawArrays(GL_TRIANGLES, 0, 36);
+	
+//	// Render the object again with ES2
+//    glUseProgram(self.program.program);
+//	
+//	 glDrawArrays(GL_TRIANGLES, 0, 36);
 }
 
 @end

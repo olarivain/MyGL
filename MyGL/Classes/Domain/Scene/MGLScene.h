@@ -11,10 +11,10 @@
 @protocol MGLScene <NSObject>
 
 - (void) setup;
-- (void) update;
+- (void) update: (NSTimeInterval) timeSinceLastUpdate;
 - (void) draw;
 - (void) destroy;
 
-- (void) setViewportFrame: (CGRect *) frame;
+- (void) setViewportFrame: (CGRect) frame;
 
 @end
