@@ -10,7 +10,7 @@
 
 #import "MGLScene.h"
 
-@interface MGLSampleScene : NSObject<MGLScene>
+@interface MGLAppleScene : NSObject<MGLScene>
 
 @property (nonatomic) CGRect viewportFrame;
 

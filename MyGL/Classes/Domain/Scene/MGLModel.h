@@ -18,5 +18,6 @@
 - (void) destroy;
 
 - (void) setProjectionMatrix: (GLKMatrix4) matrix;
+- (void) setModelMatrix: (GLKMatrix4) matrix;
 
 @end

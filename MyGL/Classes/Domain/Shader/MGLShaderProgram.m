@@ -62,9 +62,6 @@
     glAttachShader(_program, fragShader);
     
     // Bind attribute locations.
-    // This needs to be done prior to linking.
-    glBindAttribLocation(_program, GLKVertexAttribPosition, "position");
-    glBindAttribLocation(_program, GLKVertexAttribNormal, "normal");
     
     // Link program.
     if (![self linkProgram:_program]) {

@@ -28,8 +28,10 @@
 		003A350A1710CF4B00A7B978 /* Simple.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 003A35071710CF1E00A7B978 /* Simple.fsh */; };
 		003A35111710D25600A7B978 /* MGLShaderProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A35101710D25600A7B978 /* MGLShaderProgram.m */; };
 		003A351A1710D3C200A7B978 /* Stuff in Resources */ = {isa = PBXBuildFile; fileRef = 003A35191710D3C200A7B978 /* Stuff */; };
-		003A35231710D71200A7B978 /* MGLSampleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A35221710D71200A7B978 /* MGLSampleScene.m */; };
-		003A35261710D75C00A7B978 /* MGLAppleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A35251710D75B00A7B978 /* MGLAppleModel.m */; };
+		003A352D1710EAE800A7B978 /* MGLAppleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A35291710EAE800A7B978 /* MGLAppleModel.m */; };
+		003A352E1710EAE800A7B978 /* MGLAppleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A352B1710EAE800A7B978 /* MGLAppleScene.m */; };
+		003A35311710EB1200A7B978 /* MGLWenderlichScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A35301710EB1200A7B978 /* MGLWenderlichScene.m */; };
+		003A35341710EB4400A7B978 /* MGLWenderlichModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A35331710EB4400A7B978 /* MGLWenderlichModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,10 +62,14 @@
 		003A35191710D3C200A7B978 /* Stuff */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Stuff; sourceTree = "<group>"; };
 		003A351B1710D45A00A7B978 /* MGLModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGLModel.h; sourceTree = "<group>"; };
 		003A351F1710D6DA00A7B978 /* MGLScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGLScene.h; sourceTree = "<group>"; };
-		003A35211710D71200A7B978 /* MGLSampleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLSampleScene.h; sourceTree = "<group>"; };
-		003A35221710D71200A7B978 /* MGLSampleScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLSampleScene.m; sourceTree = "<group>"; };
-		003A35241710D75B00A7B978 /* MGLAppleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLAppleModel.h; sourceTree = "<group>"; };
-		003A35251710D75B00A7B978 /* MGLAppleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLAppleModel.m; sourceTree = "<group>"; };
+		003A35281710EAE800A7B978 /* MGLAppleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLAppleModel.h; sourceTree = "<group>"; };
+		003A35291710EAE800A7B978 /* MGLAppleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLAppleModel.m; sourceTree = "<group>"; };
+		003A352A1710EAE800A7B978 /* MGLAppleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLAppleScene.h; sourceTree = "<group>"; };
+		003A352B1710EAE800A7B978 /* MGLAppleScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLAppleScene.m; sourceTree = "<group>"; };
+		003A352F1710EB1200A7B978 /* MGLWenderlichScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLWenderlichScene.h; sourceTree = "<group>"; };
+		003A35301710EB1200A7B978 /* MGLWenderlichScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLWenderlichScene.m; sourceTree = "<group>"; };
+		003A35321710EB4400A7B978 /* MGLWenderlichModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLWenderlichModel.h; sourceTree = "<group>"; };
+		003A35331710EB4400A7B978 /* MGLWenderlichModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLWenderlichModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,12 +221,32 @@
 		003A35201710D70400A7B978 /* impl */ = {
 			isa = PBXGroup;
 			children = (
-				003A35211710D71200A7B978 /* MGLSampleScene.h */,
-				003A35221710D71200A7B978 /* MGLSampleScene.m */,
-				003A35241710D75B00A7B978 /* MGLAppleModel.h */,
-				003A35251710D75B00A7B978 /* MGLAppleModel.m */,
+				003A35271710EAE800A7B978 /* Apple */,
+				003A352C1710EAE800A7B978 /* Wenderlich */,
 			);
 			path = impl;
+			sourceTree = "<group>";
+		};
+		003A35271710EAE800A7B978 /* Apple */ = {
+			isa = PBXGroup;
+			children = (
+				003A352A1710EAE800A7B978 /* MGLAppleScene.h */,
+				003A352B1710EAE800A7B978 /* MGLAppleScene.m */,
+				003A35281710EAE800A7B978 /* MGLAppleModel.h */,
+				003A35291710EAE800A7B978 /* MGLAppleModel.m */,
+			);
+			path = Apple;
+			sourceTree = "<group>";
+		};
+		003A352C1710EAE800A7B978 /* Wenderlich */ = {
+			isa = PBXGroup;
+			children = (
+				003A352F1710EB1200A7B978 /* MGLWenderlichScene.h */,
+				003A35301710EB1200A7B978 /* MGLWenderlichScene.m */,
+				003A35321710EB4400A7B978 /* MGLWenderlichModel.h */,
+				003A35331710EB4400A7B978 /* MGLWenderlichModel.m */,
+			);
+			path = Wenderlich;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,8 +327,10 @@
 				003A35061710CE5E00A7B978 /* Simple.vsh in Sources */,
 				003A35081710CF1E00A7B978 /* Simple.fsh in Sources */,
 				003A35111710D25600A7B978 /* MGLShaderProgram.m in Sources */,
-				003A35231710D71200A7B978 /* MGLSampleScene.m in Sources */,
-				003A35261710D75C00A7B978 /* MGLAppleModel.m in Sources */,
+				003A352D1710EAE800A7B978 /* MGLAppleModel.m in Sources */,
+				003A352E1710EAE800A7B978 /* MGLAppleScene.m in Sources */,
+				003A35311710EB1200A7B978 /* MGLWenderlichScene.m in Sources */,
+				003A35341710EB4400A7B978 /* MGLWenderlichModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
