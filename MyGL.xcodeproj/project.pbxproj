@@ -27,11 +27,10 @@
 		003A352D1710EAE800A7B978 /* MGLCubeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A35291710EAE800A7B978 /* MGLCubeModel.m */; };
 		003A352E1710EAE800A7B978 /* MGLCubeScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A352B1710EAE800A7B978 /* MGLCubeScene.m */; };
 		003A353B1711472800A7B978 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 003A353A1711472700A7B978 /* QuartzCore.framework */; };
-		003A354B1711484C00A7B978 /* MGLSceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A35471711484C00A7B978 /* MGLSceneViewController.m */; };
-		003A354C1711484C00A7B978 /* MGLSceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 003A35481711484C00A7B978 /* MGLSceneViewController.xib */; };
-		003A354D1711484C00A7B978 /* MGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A354A1711484C00A7B978 /* MGLView.m */; };
 		00EF26F41711AAC6001B41C6 /* item_powerup_fish.png in Resources */ = {isa = PBXBuildFile; fileRef = 00EF26F21711AAC6001B41C6 /* item_powerup_fish.png */; };
 		00EF26F51711AAC6001B41C6 /* tile_floor.png in Resources */ = {isa = PBXBuildFile; fileRef = 00EF26F31711AAC6001B41C6 /* tile_floor.png */; };
+		00EF27301711E8B9001B41C6 /* MGLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EF272E1711E8B9001B41C6 /* MGLViewController.m */; };
+		00EF27311711E8B9001B41C6 /* MGLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00EF272F1711E8B9001B41C6 /* MGLViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,13 +63,11 @@
 		003A352A1710EAE800A7B978 /* MGLCubeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLCubeScene.h; sourceTree = "<group>"; };
 		003A352B1710EAE800A7B978 /* MGLCubeScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLCubeScene.m; sourceTree = "<group>"; };
 		003A353A1711472700A7B978 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		003A35461711484C00A7B978 /* MGLSceneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLSceneViewController.h; sourceTree = "<group>"; };
-		003A35471711484C00A7B978 /* MGLSceneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLSceneViewController.m; sourceTree = "<group>"; };
-		003A35481711484C00A7B978 /* MGLSceneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MGLSceneViewController.xib; sourceTree = "<group>"; };
-		003A35491711484C00A7B978 /* MGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLView.h; sourceTree = "<group>"; };
-		003A354A1711484C00A7B978 /* MGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLView.m; sourceTree = "<group>"; };
 		00EF26F21711AAC6001B41C6 /* item_powerup_fish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_powerup_fish.png; sourceTree = "<group>"; };
 		00EF26F31711AAC6001B41C6 /* tile_floor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tile_floor.png; sourceTree = "<group>"; };
+		00EF272D1711E8B9001B41C6 /* MGLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLViewController.h; sourceTree = "<group>"; };
+		00EF272E1711E8B9001B41C6 /* MGLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLViewController.m; sourceTree = "<group>"; };
+		00EF272F1711E8B9001B41C6 /* MGLViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MGLViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,11 +231,9 @@
 		003A35451711484B00A7B978 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				003A35461711484C00A7B978 /* MGLSceneViewController.h */,
-				003A35471711484C00A7B978 /* MGLSceneViewController.m */,
-				003A35481711484C00A7B978 /* MGLSceneViewController.xib */,
-				003A35491711484C00A7B978 /* MGLView.h */,
-				003A354A1711484C00A7B978 /* MGLView.m */,
+				00EF272D1711E8B9001B41C6 /* MGLViewController.h */,
+				00EF272E1711E8B9001B41C6 /* MGLViewController.m */,
+				00EF272F1711E8B9001B41C6 /* MGLViewController.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -313,9 +308,9 @@
 				003A34D91710BE5F00A7B978 /* Default@2x.png in Resources */,
 				003A34DB1710BE5F00A7B978 /* Default-568h@2x.png in Resources */,
 				003A351A1710D3C200A7B978 /* Stuff in Resources */,
-				003A354C1711484C00A7B978 /* MGLSceneViewController.xib in Resources */,
 				00EF26F41711AAC6001B41C6 /* item_powerup_fish.png in Resources */,
 				00EF26F51711AAC6001B41C6 /* tile_floor.png in Resources */,
+				00EF27311711E8B9001B41C6 /* MGLViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,8 +326,7 @@
 				003A35111710D25600A7B978 /* MGLShaderProgram.m in Sources */,
 				003A352D1710EAE800A7B978 /* MGLCubeModel.m in Sources */,
 				003A352E1710EAE800A7B978 /* MGLCubeScene.m in Sources */,
-				003A354B1711484C00A7B978 /* MGLSceneViewController.m in Sources */,
-				003A354D1711484C00A7B978 /* MGLView.m in Sources */,
+				00EF27301711E8B9001B41C6 /* MGLViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -180,6 +180,7 @@ static GLuint _textureUniform;
     GLuint texName;
     glGenTextures(1, &texName);
     glBindTexture(GL_TEXTURE_2D, texName);
+	glUniform1i(_textureUniform, 0);
 	
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 	
@@ -191,12 +192,11 @@ static GLuint _textureUniform;
 
 #pragma mark - Drawing
 - (void) draw {
-	
 	glUseProgram(shader.program);
 	GLKMatrix4 mvpMatrix = GLKMatrix4Multiply(_projectionMatrix, _modelMatrix);
     glUniformMatrix4fv(_mvpMatrixSlot, 1, 0, mvpMatrix.m);
 	glUniformMatrix3fv(_normalMatrixSlot, 1, 0, _normalMatrix.m);
-	glUniform1i(_textureUniform, 0);
+
 	
 	glBindBuffer(GL_ARRAY_BUFFER, _vertexBuffer);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBuffer);

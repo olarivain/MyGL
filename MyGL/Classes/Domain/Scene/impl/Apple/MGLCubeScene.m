@@ -53,6 +53,7 @@
 	}
 	
 	glClearColor(0.65f, 0.65f, 0.65f, 1.0f);
+	glEnable(GL_DEPTH_TEST);
 }
 
 - (void) createModels {
@@ -77,7 +78,7 @@
 		GLKMatrix4 modelViewMatrix = GLKMatrix4Rotate(_baseModelViewMatrix, _rotation, 0.0f, 1.0f, 0.0f);
 		modelViewMatrix = GLKMatrix4Translate(modelViewMatrix, 0.0f, 0.0f, -1.15f);
 		[model setModelMatrix: modelViewMatrix];
-
+		
 		// compute the normal matrix
 		GLKMatrix3 normalMatrix = GLKMatrix3InvertAndTranspose(GLKMatrix4GetMatrix3(modelViewMatrix), NULL);
 		[model setNormalMatrix: normalMatrix];
@@ -87,9 +88,14 @@
 }
 
 - (void) draw {
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	
 	for(id<MGLModel> model in _models) {
 		[model draw];
 	}
+	
+	const GLenum discards[]  = {GL_DEPTH_ATTACHMENT};
+	glDiscardFramebufferEXT(GL_FRAMEBUFFER, 1, discards);
 }
 
 @end
