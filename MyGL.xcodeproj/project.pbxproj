@@ -24,8 +24,6 @@
 		003A35041710CE4800A7B978 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 003A34FF1710CE3B00A7B978 /* Shader.vsh */; };
 		003A35061710CE5E00A7B978 /* Simple.vsh in Sources */ = {isa = PBXBuildFile; fileRef = 003A35051710CE5E00A7B978 /* Simple.vsh */; };
 		003A35081710CF1E00A7B978 /* Simple.fsh in Sources */ = {isa = PBXBuildFile; fileRef = 003A35071710CF1E00A7B978 /* Simple.fsh */; };
-		003A35091710CF4B00A7B978 /* Simple.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 003A35051710CE5E00A7B978 /* Simple.vsh */; };
-		003A350A1710CF4B00A7B978 /* Simple.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 003A35071710CF1E00A7B978 /* Simple.fsh */; };
 		003A35111710D25600A7B978 /* MGLShaderProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A35101710D25600A7B978 /* MGLShaderProgram.m */; };
 		003A351A1710D3C200A7B978 /* Stuff in Resources */ = {isa = PBXBuildFile; fileRef = 003A35191710D3C200A7B978 /* Stuff */; };
 		003A352D1710EAE800A7B978 /* MGLAppleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A35291710EAE800A7B978 /* MGLAppleModel.m */; };
@@ -301,8 +299,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				003A35091710CF4B00A7B978 /* Simple.vsh in Resources */,
-				003A350A1710CF4B00A7B978 /* Simple.fsh in Resources */,
 				003A35031710CE4800A7B978 /* Shader.fsh in Resources */,
 				003A35041710CE4800A7B978 /* Shader.vsh in Resources */,
 				003A34CF1710BE5F00A7B978 /* InfoPlist.strings in Resources */,
