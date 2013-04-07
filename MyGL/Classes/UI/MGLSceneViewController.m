@@ -9,8 +9,7 @@
 
 #import "MGLSceneViewController.h"
 
-#import "MGLAppleScene.h"
-#import "MGLWenderlichScene.h"
+#import "MGLCubeScene.h"
 
 #import "MGLView.h"
 
@@ -28,7 +27,7 @@
     [super viewDidLoad];
 	
 	//	self.scene = [[MGLWenderlichScene alloc] init];
-	self.scene = [[MGLAppleScene alloc] init];
+	self.scene = [[MGLCubeScene alloc] init];
 	[self.scene setup];
 	
 	self.glView.scene = self.scene;
@@ -44,6 +43,7 @@
 // Add new method before init
 - (void)setupDisplayLink {
     CADisplayLink* displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(render:)];
+	displayLink.frameInterval = 2;
     [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
 }
 

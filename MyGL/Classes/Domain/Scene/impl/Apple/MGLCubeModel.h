@@ -10,7 +10,7 @@
 
 #import "MGLModel.h"
 
-@interface MGLAppleModel : NSObject<MGLModel>
+@interface MGLCubeModel : NSObject<MGLModel>
 
 @property (nonatomic) GLKMatrix4 projectionMatrix;
 @property (nonatomic) GLKMatrix4 modelMatrix;

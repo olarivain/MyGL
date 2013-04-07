@@ -7,7 +7,7 @@
 //
 #import <GLKit/GLKit.h>
 
-#import "MGLAppleModel.h"
+#import "MGLCubeModel.h"
 
 #import "MGLShaderProgram.h"
 
@@ -60,7 +60,7 @@ GLfloat gCubeVertexData[360] =
     -0.5f, 0.5f, -0.5f,        0.0f, 0.0f, -1.0f,		1.0f, 1.0f, 0.0f, 0.5f
 };
 
-@interface MGLAppleModel () {
+@interface MGLCubeModel () {
     GLuint _vertexBuffer;
 	GLuint _indexBuffer;
 	
@@ -73,7 +73,7 @@ GLfloat gCubeVertexData[360] =
 @property (strong, nonatomic) MGLShaderProgram *program;
 @end
 
-@implementation MGLAppleModel
+@implementation MGLCubeModel
 
 - (void) setup {
 	self.program = [MGLShaderProgram programWithVertex: @"Shader"

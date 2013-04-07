@@ -1,26 +1,25 @@
 //
-//  MGLWenderlichScene.m
+//  MGLSampleScene.m
 //  MyGL
 //
 //  Created by Olivier Larivain on 4/6/13.
 //  Copyright (c) 2013 kra. All rights reserved.
 //
 
-#import "MGLWenderlichScene.h"
+#import "MGLCubeScene.h"
 
-#import "MGLWenderlichModel.h"
+#import "MGLCubeModel.h"
 
-@interface MGLWenderlichScene () {
-	float _rotation;
+@interface MGLCubeScene () {
 	GLKMatrix4 _projectionMatrix;
-	GLKMatrix4 _modelMatrix;
+	float _rotation;
 }
 
 @property (nonatomic) NSMutableArray *models;
 
 @end
 
-@implementation MGLWenderlichScene
+@implementation MGLCubeScene
 
 - (id) init {
 	self = [super init];
@@ -30,7 +29,14 @@
 	return self;
 }
 
-#pragma mark - setup
+- (void) setViewportFrame:(CGRect)viewportFrame {
+	_viewportFrame = viewportFrame;
+	// and the projection one
+	float aspect = fabsf(_viewportFrame.size.width / _viewportFrame.size.height);
+    _projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(65.0f), aspect, 0.1f, 100.0f);
+}
+
+#pragma mark - scene setup
 - (void) setup {
 	[self createModels];
 	
@@ -42,8 +48,8 @@
 }
 
 - (void) createModels {
-	MGLWenderlichModel *model = [[MGLWenderlichModel alloc] init];
-	[self.models addObject: model];
+	MGLCubeModel *appleModel = [[MGLCubeModel alloc] init];
+	[self.models addObject: appleModel];
 }
 
 #pragma mark - scene destruction
@@ -55,36 +61,30 @@
 
 #pragma mark - updating the scene
 - (void) update: (NSTimeInterval) timeSinceLastUpdate {
-	float aspect = fabsf(_viewportFrame.size.width / _viewportFrame.size.height);
-    _projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(65.0f), aspect, 0.1f, 100.0f);
-	
-	GLKMatrix4 baseModelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, -4.0f);
-//    baseModelViewMatrix = GLKMatrix4Rotate(baseModelViewMatrix, _rotation, 0.0f, 1.0f, 0.0f);
-	
-	// Compute the model view matrix for the object rendered with GLKit
-    GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, -7.0f);
+	// camera position: slightly in, by 4
+    GLKMatrix4 baseModelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, -4.0f);
+    
+    // Compute the model view matrix for the object rendered with
+    GLKMatrix4 modelViewMatrix = GLKMatrix4Identity;
     modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, _rotation, 1.0f, 1.0f, 1.0f);
     modelViewMatrix = GLKMatrix4Multiply(baseModelViewMatrix, modelViewMatrix);
+	
+	// compute the normal matrix
+    GLKMatrix3 normalMatrix = GLKMatrix3InvertAndTranspose(GLKMatrix4GetMatrix3(modelViewMatrix), NULL);
 	
 	for(id<MGLModel> model in _models) {
 		[model setProjectionMatrix: _projectionMatrix];
 		[model setModelMatrix: modelViewMatrix];
-		[model update];
+		[model setNormalMatrix: normalMatrix];
 	}
-	
-	_rotation += timeSinceLastUpdate * 0.5f;
+
+	_rotation += timeSinceLastUpdate * 1.0f;
 }
 
-#pragma mark - drawing
 - (void) draw {
-	
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
 	for(id<MGLModel> model in _models) {
 		[model draw];
-		glUseProgram(0);
 	}
-	
 }
 
 @end
