@@ -13,126 +13,131 @@
 
 #define BUFFER_OFFSET(i) ((char *)NULL + (i))
 
-GLfloat gCubeVertexData[360] =
+GLfloat vertices[360] =
 {
     // Data layout for each line below is:
     // positionX, positionY, positionZ,     normalX, normalY, normalZ,
-    0.5f, -0.5f, -0.5f,        1.0f, 0.0f, 0.0f,		1.0f, 1.0f, 0.0f, 0.5f,
-    0.5f, 0.5f, -0.5f,         1.0f, 0.0f, 0.0f,		1.0f, 1.0f, 0.0f, 0.5f,
-    0.5f, -0.5f, 0.5f,         1.0f, 0.0f, 0.0f,		1.0f, 1.0f, 0.0f, 0.5f,
-    0.5f, -0.5f, 0.5f,         1.0f, 0.0f, 0.0f,		1.0f, 1.0f, 0.0f, 0.5f,
-    0.5f, 0.5f, -0.5f,         1.0f, 0.0f, 0.0f,		1.0f, 1.0f, 0.0f, 0.5f,
-    0.5f, 0.5f, 0.5f,          1.0f, 0.0f, 0.0f,		1.0f, 1.0f, 0.0f, 0.5f,
+    0.5f, -0.5f, -0.5f,        1.0f, 0.0f, 0.0f,		1.0f, 1.0f, 0.0f, 1.0f,
+    0.5f, 0.5f, -0.5f,         1.0f, 0.0f, 0.0f,		1.0f, 1.0f, 0.0f, 1.0f,
+    0.5f, -0.5f, 0.5f,         1.0f, 0.0f, 0.0f,		1.0f, 1.0f, 0.0f, 1.0f,
+    0.5f, -0.5f, 0.5f,         1.0f, 0.0f, 0.0f,		1.0f, 1.0f, 0.0f, 1.0f,
+    0.5f, 0.5f, -0.5f,         1.0f, 0.0f, 0.0f,		1.0f, 1.0f, 0.0f, 1.0f,
+    0.5f, 0.5f, 0.5f,          1.0f, 0.0f, 0.0f,		1.0f, 1.0f, 0.0f, 1.0f,
     
-    0.5f, 0.5f, -0.5f,         0.0f, 1.0f, 0.0f,		1.0f, 1.0f, 0.0f, 0.5f,
-    -0.5f, 0.5f, -0.5f,        0.0f, 1.0f, 0.0f,		1.0f, 1.0f, 0.0f, 0.5f,
-    0.5f, 0.5f, 0.5f,          0.0f, 1.0f, 0.0f,		1.0f, 1.0f, 0.0f, 0.5f,
-    0.5f, 0.5f, 0.5f,          0.0f, 1.0f, 0.0f,		1.0f, 1.0f, 0.0f, 0.5f,
-    -0.5f, 0.5f, -0.5f,        0.0f, 1.0f, 0.0f,		1.0f, 1.0f, 0.0f, 0.5f,
-    -0.5f, 0.5f, 0.5f,         0.0f, 1.0f, 0.0f,		1.0f, 1.0f, 0.0f, 0.5f,
+    0.5f, 0.5f, -0.5f,         0.0f, 1.0f, 0.0f,		1.0f, 1.0f, 1.0f, 0.0f,
+    -0.5f, 0.5f, -0.5f,        0.0f, 1.0f, 0.0f,		1.0f, 1.0f, 1.0f, 0.0f,
+    0.5f, 0.5f, 0.5f,          0.0f, 1.0f, 0.0f,		1.0f, 1.0f, 1.0f, 0.0f,
+    0.5f, 0.5f, 0.5f,          0.0f, 1.0f, 0.0f,		1.0f, 1.0f, 1.0f, 0.0f,
+    -0.5f, 0.5f, -0.5f,        0.0f, 1.0f, 0.0f,		1.0f, 1.0f, 1.0f, 0.0f,
+    -0.5f, 0.5f, 0.5f,         0.0f, 1.0f, 0.0f,		1.0f, 1.0f, 1.0f, 0.0f,
     
-    -0.5f, 0.5f, -0.5f,        -1.0f, 0.0f, 0.0f,		1.0f, 1.0f, 0.0f, 0.5f,
-    -0.5f, -0.5f, -0.5f,       -1.0f, 0.0f, 0.0f,		1.0f, 1.0f, 0.0f, 0.5f,
-    -0.5f, 0.5f, 0.5f,         -1.0f, 0.0f, 0.0f,		1.0f, 1.0f, 0.0f, 0.5f,
-    -0.5f, 0.5f, 0.5f,         -1.0f, 0.0f, 0.0f,		1.0f, 1.0f, 0.0f, 0.5f,
-    -0.5f, -0.5f, -0.5f,       -1.0f, 0.0f, 0.0f,		1.0f, 1.0f, 0.0f, 0.5f,
-    -0.5f, -0.5f, 0.5f,        -1.0f, 0.0f, 0.0f,		1.0f, 1.0f, 0.0f, 0.5f,
+    -0.5f, 0.5f, -0.5f,        -1.0f, 0.0f, 0.0f,		1.0f, 1.0f, 0.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,       -1.0f, 0.0f, 0.0f,		1.0f, 1.0f, 0.0f, 1.0f,
+    -0.5f, 0.5f, 0.5f,         -1.0f, 0.0f, 0.0f,		1.0f, 1.0f, 0.0f, 1.0f,
+    -0.5f, 0.5f, 0.5f,         -1.0f, 0.0f, 0.0f,		1.0f, 1.0f, 0.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,       -1.0f, 0.0f, 0.0f,		1.0f, 1.0f, 0.0f, 1.0f,
+    -0.5f, -0.5f, 0.5f,        -1.0f, 0.0f, 0.0f,		1.0f, 1.0f, 0.0f, 1.0f,
     
-    -0.5f, -0.5f, -0.5f,       0.0f, -1.0f, 0.0f,		1.0f, 1.0f, 0.0f, 0.5f,
-    0.5f, -0.5f, -0.5f,        0.0f, -1.0f, 0.0f,		1.0f, 1.0f, 0.0f, 0.5f,
-    -0.5f, -0.5f, 0.5f,        0.0f, -1.0f, 0.0f,		1.0f, 1.0f, 0.0f, 0.5f,
-    -0.5f, -0.5f, 0.5f,        0.0f, -1.0f, 0.0f,		1.0f, 1.0f, 0.0f, 0.5f,
-    0.5f, -0.5f, -0.5f,        0.0f, -1.0f, 0.0f,		1.0f, 1.0f, 0.0f, 0.5f,
-    0.5f, -0.5f, 0.5f,         0.0f, -1.0f, 0.0f,		1.0f, 1.0f, 0.0f, 0.5f,
+    -0.5f, -0.5f, -0.5f,       0.0f, -1.0f, 0.0f,		1.0f, 1.0f, 1.0f, 0.0f,
+    0.5f, -0.5f, -0.5f,        0.0f, -1.0f, 0.0f,		1.0f, 1.0f, 1.0f, 0.0f,
+    -0.5f, -0.5f, 0.5f,        0.0f, -1.0f, 0.0f,		1.0f, 1.0f, 1.0f, 0.0f,
+    -0.5f, -0.5f, 0.5f,        0.0f, -1.0f, 0.0f,		1.0f, 1.0f, 1.0f, 0.0f,
+    0.5f, -0.5f, -0.5f,        0.0f, -1.0f, 0.0f,		1.0f, 1.0f, 1.0f, 0.0f,
+    0.5f, -0.5f, 0.5f,         0.0f, -1.0f, 0.0f,		1.0f, 1.0f, 1.0f, 0.0f,
     
-    0.5f, 0.5f, 0.5f,          0.0f, 0.0f, 1.0f,		1.0f, 1.0f, 0.0f, 0.5f,
-    -0.5f, 0.5f, 0.5f,         0.0f, 0.0f, 1.0f,		1.0f, 1.0f, 0.0f, 0.5f,
-    0.5f, -0.5f, 0.5f,         0.0f, 0.0f, 1.0f,		1.0f, 1.0f, 0.0f, 0.5f,
-    0.5f, -0.5f, 0.5f,         0.0f, 0.0f, 1.0f,		1.0f, 1.0f, 0.0f, 0.5f,
-    -0.5f, 0.5f, 0.5f,         0.0f, 0.0f, 1.0f,		1.0f, 1.0f, 0.0f, 0.5f,
-    -0.5f, -0.5f, 0.5f,        0.0f, 0.0f, 1.0f,		1.0f, 1.0f, 0.0f, 0.5f,
+    0.5f, 0.5f, 0.5f,          0.0f, 0.0f, 1.0f,		1.0f, 1.0f, 0.0f, 1.0f,
+    -0.5f, 0.5f, 0.5f,         0.0f, 0.0f, 1.0f,		1.0f, 1.0f, 0.0f, 1.0f,
+    0.5f, -0.5f, 0.5f,         0.0f, 0.0f, 1.0f,		1.0f, 1.0f, 0.0f, 1.0f,
+    0.5f, -0.5f, 0.5f,         0.0f, 0.0f, 1.0f,		1.0f, 1.0f, 0.0f, 1.0f,
+    -0.5f, 0.5f, 0.5f,         0.0f, 0.0f, 1.0f,		1.0f, 1.0f, 0.0f, 1.0f,
+    -0.5f, -0.5f, 0.5f,        0.0f, 0.0f, 1.0f,		1.0f, 1.0f, 0.0f, 1.0f,
     
-    0.5f, -0.5f, -0.5f,        0.0f, 0.0f, -1.0f,		1.0f, 1.0f, 0.0f, 0.5f,
-    -0.5f, -0.5f, -0.5f,       0.0f, 0.0f, -1.0f,		1.0f, 1.0f, 0.0f, 0.5f,
-    0.5f, 0.5f, -0.5f,         0.0f, 0.0f, -1.0f,		1.0f, 1.0f, 0.0f, 0.5f,
-    0.5f, 0.5f, -0.5f,         0.0f, 0.0f, -1.0f,		1.0f, 1.0f, 0.0f, 0.5f,
-    -0.5f, -0.5f, -0.5f,       0.0f, 0.0f, -1.0f,		1.0f, 1.0f, 0.0f, 0.5f,
-    -0.5f, 0.5f, -0.5f,        0.0f, 0.0f, -1.0f,		1.0f, 1.0f, 0.0f, 0.5f
+    0.5f, -0.5f, -0.5f,        0.0f, 0.0f, -1.0f,		1.0f, 1.0f, 0.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,       0.0f, 0.0f, -1.0f,		1.0f, 1.0f, 0.0f, 1.0f,
+    0.5f, 0.5f, -0.5f,         0.0f, 0.0f, -1.0f,		1.0f, 1.0f, 0.0f, 1.0f,
+    0.5f, 0.5f, -0.5f,         0.0f, 0.0f, -1.0f,		1.0f, 1.0f, 0.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,       0.0f, 0.0f, -1.0f,		1.0f, 1.0f, 0.0f, 1.0f,
+    -0.5f, 0.5f, -0.5f,        0.0f, 0.0f, -1.0f,		1.0f, 1.0f, 0.0f, 1.0f
 };
 
+GLubyte indices[36];
+
+static MGLShaderProgram *shader;
+
+static GLuint _vertexBuffer;
+static GLuint _indexBuffer;
+static GLuint _mvpMatrixSlot;
+static GLuint _normalMatrixSlot;
+
 @interface MGLCubeModel () {
-    GLuint _vertexBuffer;
-	GLuint _indexBuffer;
-	
-	GLuint *_indices;
-	
-	GLuint _projectionMatrixSlot;
-	GLuint _modelMatrixSlot;
-	GLuint _normalMatrixSlot;
 }
-@property (strong, nonatomic) MGLShaderProgram *program;
+
 @end
 
 @implementation MGLCubeModel
 
 - (void) setup {
-	self.program = [MGLShaderProgram programWithVertex: @"Shader"
-									   fragmentShader: @"Shader"];
-	[self.program compile];
-    
-	glUseProgram(self.program.program);
-	_projectionMatrixSlot = glGetUniformLocation(self.program.program, "projectionMatrix");
-	_modelMatrixSlot = glGetUniformLocation(self.program.program, "modelMatrix");
-	_normalMatrixSlot = glGetUniformLocation(self.program.program, "normalMatrix");
-	glUseProgram(0);
-    
-    glGenBuffers(1, &_vertexBuffer);
-    glBindBuffer(GL_ARRAY_BUFFER, _vertexBuffer);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(gCubeVertexData), gCubeVertexData, GL_STATIC_DRAW);
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		[self loadProgram];
+		[self loadModel];
+	});
+}
+
+- (void) loadProgram {
+	shader = [MGLShaderProgram programWithVertex: @"Shader"
+								  fragmentShader: @"Shader"];
+	[shader compile];
+	
+	_mvpMatrixSlot = glGetUniformLocation(shader.program, "mvpMatrix");
+	_normalMatrixSlot = glGetUniformLocation(shader.program, "normalMatrix");
+
+}
+
+- (void) loadModel {
+	
+	glGenBuffers(1, &_vertexBuffer);
+	glBindBuffer(GL_ARRAY_BUFFER, _vertexBuffer);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+	
 	
 	glEnableVertexAttribArray(GLKVertexAttribPosition);
-    glEnableVertexAttribArray(GLKVertexAttribNormal);
+	glEnableVertexAttribArray(GLKVertexAttribNormal);
 	glEnableVertexAttribArray(GLKVertexAttribColor);
 	
-    glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, (GLsizei) (10 * sizeof(float)), 0);
-    glVertexAttribPointer(GLKVertexAttribNormal, 3, GL_FLOAT, GL_FALSE, (GLsizei) (10 * sizeof(float)), (GLvoid *) (3 * sizeof(GLfloat)));
+	glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, (GLsizei) (10 * sizeof(float)), 0);
+	glVertexAttribPointer(GLKVertexAttribNormal, 3, GL_FLOAT, GL_FALSE, (GLsizei) (10 * sizeof(float)), (GLvoid *) (3 * sizeof(GLfloat)));
 	glVertexAttribPointer(GLKVertexAttribColor, 4, GL_FLOAT, GL_FALSE, (GLsizei) (10 * sizeof(float)), (GLvoid *) (6 * sizeof(GLfloat)));
 	
-	_indices = malloc(36 * sizeof(GLuint));
-
-	for(int i = 0; i < 36; i++) {
-		_indices[i] = i;
+	for(int i = 0; i < sizeof(indices); i++) {
+		indices[i] = (GLubyte) i;
 	}
 	
-    glGenBuffers(1, &_indexBuffer);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBuffer);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, 36 * sizeof(GLuint), _indices, GL_STATIC_DRAW);
+	glGenBuffers(1, &_indexBuffer);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBuffer);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 	
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
-
+	
 }
 
 - (void) destroy {
 	glDeleteBuffers(1, &_vertexBuffer);
 	glDeleteBuffers(1, &_indexBuffer);
-	free(_indices);
-}
-
-- (void) update {
 }
 
 - (void) draw {
-	glUseProgram(self.program.program);
 	
-	glUniformMatrix4fv(_projectionMatrixSlot, 1, 0, _projectionMatrix.m);
-	glUniformMatrix4fv(_modelMatrixSlot, 1, 0, _modelMatrix.m);
-    glUniformMatrix3fv(_normalMatrixSlot, 1, 0, _normalMatrix.m);
+	glUseProgram(shader.program);
+	GLKMatrix4 mvpMatrix = GLKMatrix4Multiply(_projectionMatrix, _modelMatrix);
+    glUniformMatrix4fv(_mvpMatrixSlot, 1, 0, mvpMatrix.m);
+	glUniformMatrix3fv(_normalMatrixSlot, 1, 0, _normalMatrix.m);
 	
 	glBindBuffer(GL_ARRAY_BUFFER, _vertexBuffer);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBuffer);
 	
-	glDrawElements(GL_TRIANGLES,  36, GL_UNSIGNED_INT, 0);
+	glDrawElements(GL_TRIANGLES,  sizeof(indices) / sizeof(indices[0]), GL_UNSIGNED_BYTE, 0);
 	
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);

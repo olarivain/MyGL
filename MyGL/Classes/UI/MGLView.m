@@ -108,7 +108,7 @@
 	
 	const GLenum discards[]  = {GL_DEPTH_ATTACHMENT};
 	glDiscardFramebufferEXT(GL_FRAMEBUFFER, 1, discards);
-	
+
     [_context presentRenderbuffer:GL_RENDERBUFFER];
 }
 
