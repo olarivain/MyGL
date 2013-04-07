@@ -96,7 +96,14 @@
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
-	[self.scene draw];
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	
+//	[_scene update: displayLink.duration];
+	[_scene draw];
+	
+	const GLenum discards[]  = {GL_DEPTH_ATTACHMENT};
+	glDiscardFramebufferEXT(GL_FRAMEBUFFER, 1, discards);
+//	[self.scene draw];
 }
 
 @end

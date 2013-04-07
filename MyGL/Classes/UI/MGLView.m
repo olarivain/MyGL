@@ -15,6 +15,7 @@
 @interface MGLView () {
 	CAEAGLLayer* _eaglLayer;
     EAGLContext* _context;
+	GLuint _framebuffer;
     GLuint _colorRenderBuffer;
 	GLuint _depthRenderBuffer;
 }
@@ -90,9 +91,8 @@
 }
 
 - (void)setupFrameBuffer {
-    GLuint framebuffer;
-    glGenFramebuffers(1, &framebuffer);
-    glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
+    glGenFramebuffers(1, &_framebuffer);
+    glBindFramebuffer(GL_FRAMEBUFFER, _framebuffer);
     glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, _colorRenderBuffer);
 	glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, _depthRenderBuffer);
 	
@@ -101,8 +101,14 @@
 }
 
 - (void)render: (CADisplayLink *) displayLink {
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	
 	[_scene update: displayLink.duration];
 	[_scene draw];
+	
+	const GLenum discards[]  = {GL_DEPTH_ATTACHMENT};
+	glDiscardFramebufferEXT(GL_FRAMEBUFFER, 1, discards);
+	
     [_context presentRenderbuffer:GL_RENDERBUFFER];
 }
 

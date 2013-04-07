@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MyGL/Classes/Domain/Scene/impl/Apple/MGLAppleScene.m"
-         timestampString = "387009646.125917"
+         timestampString = "387011717.204933"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "58"
-         endingLineNumber = "58"
+         startingLineNumber = "65"
+         endingLineNumber = "65"
          landmarkName = "-update:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,24 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MyGL/Classes/UI/MGLView.m"
-         timestampString = "387010689.836212"
+         timestampString = "387019990.281187"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "106"
-         endingLineNumber = "106"
-         landmarkName = "-render:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "MyGL/Classes/UI/MGLView.m"
-         timestampString = "387009461.619907"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "34"
-         endingLineNumber = "34"
+         startingLineNumber = "35"
+         endingLineNumber = "35"
          landmarkName = "-initWithFrame:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -86,11 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MyGL/Classes/UI/MGLView.m"
-         timestampString = "387009463.109173"
+         timestampString = "387019990.281187"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "46"
-         endingLineNumber = "46"
+         startingLineNumber = "47"
+         endingLineNumber = "47"
          landmarkName = "-initWithCoder:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -99,20 +86,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MyGL/Classes/UI/MGLView.m"
-         timestampString = "387010608.423916"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "56"
-         endingLineNumber = "56"
-         landmarkName = "-layoutSubviews"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "MyGL/Classes/UI/MGLView.m"
-         timestampString = "387010598.053033"
+         timestampString = "387019990.281187"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "57"
@@ -124,14 +98,25 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "MyGL/Classes/Domain/Scene/impl/Apple/MGLAppleScene.m"
-         timestampString = "387010639.891544"
+         filePath = "MyGL/Classes/UI/MGLView.m"
+         timestampString = "387019990.281187"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "72"
-         endingLineNumber = "72"
-         landmarkName = "-update:"
+         startingLineNumber = "58"
+         endingLineNumber = "58"
+         landmarkName = "-layoutSubviews"
          landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MyGL/Classes/Domain/Scene/impl/Apple/MGLAppleModel.m"
+         timestampString = "387019990.281187"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "177"
+         endingLineNumber = "177">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

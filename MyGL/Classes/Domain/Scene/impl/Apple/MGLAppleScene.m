@@ -11,10 +11,10 @@
 #import "MGLAppleModel.h"
 
 @interface MGLAppleScene () {
+	GLKMatrix4 _projectionMatrix;
 	float _rotation;
 }
 
-@property (strong, nonatomic) GLKBaseEffect *effect;
 @property (nonatomic) NSMutableArray *models;
 
 @end
@@ -27,6 +27,13 @@
 		self.models = [NSMutableArray arrayWithCapacity: 5];
 	}
 	return self;
+}
+
+- (void) setViewportFrame:(CGRect)viewportFrame {
+	_viewportFrame = viewportFrame;
+	// and the projection one
+	float aspect = fabsf(_viewportFrame.size.width / _viewportFrame.size.height);
+    _projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(65.0f), aspect, 0.1f, 100.0f);
 }
 
 #pragma mark - scene setup
@@ -62,41 +69,22 @@
     modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, _rotation, 1.0f, 1.0f, 1.0f);
     modelViewMatrix = GLKMatrix4Multiply(baseModelViewMatrix, modelViewMatrix);
 	
-	self.effect.transform.modelviewMatrix = modelViewMatrix;
-	
 	// compute the normal matrix
     GLKMatrix3 normalMatrix = GLKMatrix3InvertAndTranspose(GLKMatrix4GetMatrix3(modelViewMatrix), NULL);
-
-	// and the projection one
-	float aspect = fabsf(_viewportFrame.size.width / _viewportFrame.size.height);
-    GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(65.0f), aspect, 0.1f, 100.0f);
-	self.effect.transform.projectionMatrix = projectionMatrix;
 	
 	for(id<MGLModel> model in _models) {
-		[model setProjectionMatrix: projectionMatrix];
+		[model setProjectionMatrix: _projectionMatrix];
 		[model setModelMatrix: modelViewMatrix];
 		[model setNormalMatrix: normalMatrix];
 	}
-	
 
-	
 	_rotation += timeSinceLastUpdate * 1.0f;
 }
 
 - (void) draw {
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	
-	// Render the object with GLKit
-//    [self.effect prepareToDraw];
-	
 	for(id<MGLModel> model in _models) {
 		[model draw];
-		glUseProgram(0);
 	}
-
-	const GLenum discards[]  = {GL_DEPTH_ATTACHMENT, GL_COLOR_ATTACHMENT0};
-	
-	glDiscardFramebufferEXT(GL_FRAMEBUFFER, 2, discards);
 }
 
 @end
