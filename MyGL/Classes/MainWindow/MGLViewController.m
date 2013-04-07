@@ -8,7 +8,7 @@
 
 #import "MGLViewController.h"
 
-//#import "MGLAppleScene.h"
+#import "MGLAppleScene.h"
 #import "MGLWenderlichScene.h"
 
 @interface MGLViewController () {
@@ -73,7 +73,8 @@
 {
     [EAGLContext setCurrentContext:self.context];
     
-	self.scene = [[MGLWenderlichScene alloc] init];
+//	self.scene = [[MGLWenderlichScene alloc] init];
+	self.scene = [[MGLAppleScene alloc] init];
 	[self.scene setup];
 }
 

@@ -12,7 +12,6 @@
 
 @interface MGLAppleScene () {
 	float _rotation;
-	GLKMatrix4 _projectionMatrix;
 }
 
 @property (strong, nonatomic) GLKBaseEffect *effect;
@@ -32,11 +31,6 @@
 
 #pragma mark - scene setup
 - (void) setup {
-	self.effect = [[GLKBaseEffect alloc] init];
-    self.effect.light0.enabled = GL_TRUE;
-	self.effect.light0.ambientColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f);
-    self.effect.light0.diffuseColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f);
-	
 	[self createModels];
 	
 	for(id<MGLModel> model in _models) {
@@ -60,35 +54,49 @@
 
 #pragma mark - updating the scene
 - (void) update: (NSTimeInterval) timeSinceLastUpdate {
-	float aspect = fabsf(_viewportFrame.size.width / _viewportFrame.size.height);
-    _projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(65.0f), aspect, 0.1f, 100.0f);
-	
-	self.effect.transform.projectionMatrix = _projectionMatrix;
-    
+	// camera position: slightly in, by 4
     GLKMatrix4 baseModelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, -4.0f);
-    baseModelViewMatrix = GLKMatrix4Rotate(baseModelViewMatrix, _rotation, 0.0f, 1.0f, 0.0f);
     
-    // Compute the model view matrix for the object rendered with GLKit
-    GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, -1.5f);
+    // Compute the model view matrix for the object rendered with
+    GLKMatrix4 modelViewMatrix = GLKMatrix4Identity;
     modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, _rotation, 1.0f, 1.0f, 1.0f);
     modelViewMatrix = GLKMatrix4Multiply(baseModelViewMatrix, modelViewMatrix);
-    
-    self.effect.transform.modelviewMatrix = modelViewMatrix;
 	
-	_rotation += timeSinceLastUpdate * 0.5f;
+	self.effect.transform.modelviewMatrix = modelViewMatrix;
+	
+	// compute the normal matrix
+    GLKMatrix3 normalMatrix = GLKMatrix3InvertAndTranspose(GLKMatrix4GetMatrix3(modelViewMatrix), NULL);
+
+	// and the projection one
+	float aspect = fabsf(_viewportFrame.size.width / _viewportFrame.size.height);
+    GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(65.0f), aspect, 0.1f, 100.0f);
+	self.effect.transform.projectionMatrix = projectionMatrix;
+	
+	for(id<MGLModel> model in _models) {
+		[model setProjectionMatrix: projectionMatrix];
+		[model setModelMatrix: modelViewMatrix];
+		[model setNormalMatrix: normalMatrix];
+	}
+	
+
+	
+	_rotation += timeSinceLastUpdate * 1.0f;
 }
 
 - (void) draw {
-
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	
 	// Render the object with GLKit
-    [self.effect prepareToDraw];
+//    [self.effect prepareToDraw];
 	
 	for(id<MGLModel> model in _models) {
 		[model draw];
-//		glUseProgram(0);
+		glUseProgram(0);
 	}
 
+	const GLenum discards[]  = {GL_DEPTH_ATTACHMENT, GL_COLOR_ATTACHMENT0};
+	
+	glDiscardFramebufferEXT(GL_FRAMEBUFFER, 2, discards);
 }
 
 @end

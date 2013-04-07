@@ -14,6 +14,6 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) MGLViewController *viewController;
+@property (strong, nonatomic) UIViewController *viewController;
 
 @end

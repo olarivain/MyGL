@@ -19,5 +19,6 @@
 
 - (void) setProjectionMatrix: (GLKMatrix4) matrix;
 - (void) setModelMatrix: (GLKMatrix4) matrix;
+- (void) setNormalMatrix: (GLKMatrix3) matrix;
 
 @end

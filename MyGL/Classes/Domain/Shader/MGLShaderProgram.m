@@ -62,7 +62,10 @@
     glAttachShader(_program, fragShader);
     
     // Bind attribute locations.
-    
+	glBindAttribLocation(_program, GLKVertexAttribPosition, "position");
+    glBindAttribLocation(_program, GLKVertexAttribNormal, "normal");
+	glBindAttribLocation(_program, GLKVertexAttribColor, "color");
+	
     // Link program.
     if (![self linkProgram:_program]) {
         NSLog(@"Failed to link program: %d", _program);

@@ -43,13 +43,13 @@ const GLubyte Indices[] = {
 	[self.shader compile];
 	
     glUseProgram(self.shader.program);
-	self.positionSlot = glGetAttribLocation(self.shader.program, "Position");
-    self.colorSlot = glGetAttribLocation(self.shader.program, "SourceColor");
+//	self.positionSlot = glGetAttribLocation(self.shader.program, "Position");
+//    self.colorSlot = glGetAttribLocation(self.shader.program, "SourceColor");
 	self.projectionUniform = glGetUniformLocation(self.shader.program, "Projection");
 	self.modelViewUniform = glGetUniformLocation(self.shader.program, "Modelview");
 	
-	glEnableVertexAttribArray(self.positionSlot);
-    glEnableVertexAttribArray(self.colorSlot);
+	glEnableVertexAttribArray(GLKVertexAttribPosition);
+    glEnableVertexAttribArray(GLKVertexAttribColor);
 	
     GLuint vertexBuffer;
     glGenBuffers(1, &vertexBuffer);
@@ -74,8 +74,8 @@ const GLubyte Indices[] = {
 	glUniformMatrix4fv(_projectionUniform, 1, 0, self.projectionMatrix.m);
 	glUniformMatrix4fv(_modelViewUniform, 1, 0, self.modelMatrix.m);
 	
-    glVertexAttribPointer(_positionSlot, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), 0);
-    glVertexAttribPointer(_colorSlot, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid*) (sizeof(float) * 3));
+    glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), 0);
+    glVertexAttribPointer(GLKVertexAttribColor, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid*) (sizeof(float) * 3));
 	
     glDrawElements(GL_TRIANGLES, sizeof(Indices)/sizeof(Indices[0]), GL_UNSIGNED_BYTE, 0);
 }

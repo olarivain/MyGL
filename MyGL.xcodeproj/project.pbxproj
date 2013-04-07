@@ -22,14 +22,18 @@
 		003A34F11710C37500A7B978 /* MGLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 003A34EF1710C37500A7B978 /* MGLViewController.xib */; };
 		003A35031710CE4800A7B978 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 003A34FE1710CE3B00A7B978 /* Shader.fsh */; };
 		003A35041710CE4800A7B978 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 003A34FF1710CE3B00A7B978 /* Shader.vsh */; };
-		003A35061710CE5E00A7B978 /* Simple.vsh in Sources */ = {isa = PBXBuildFile; fileRef = 003A35051710CE5E00A7B978 /* Simple.vsh */; };
-		003A35081710CF1E00A7B978 /* Simple.fsh in Sources */ = {isa = PBXBuildFile; fileRef = 003A35071710CF1E00A7B978 /* Simple.fsh */; };
+		003A35061710CE5E00A7B978 /* Simple.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 003A35051710CE5E00A7B978 /* Simple.vsh */; };
+		003A35081710CF1E00A7B978 /* Simple.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 003A35071710CF1E00A7B978 /* Simple.fsh */; };
 		003A35111710D25600A7B978 /* MGLShaderProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A35101710D25600A7B978 /* MGLShaderProgram.m */; };
 		003A351A1710D3C200A7B978 /* Stuff in Resources */ = {isa = PBXBuildFile; fileRef = 003A35191710D3C200A7B978 /* Stuff */; };
 		003A352D1710EAE800A7B978 /* MGLAppleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A35291710EAE800A7B978 /* MGLAppleModel.m */; };
 		003A352E1710EAE800A7B978 /* MGLAppleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A352B1710EAE800A7B978 /* MGLAppleScene.m */; };
 		003A35311710EB1200A7B978 /* MGLWenderlichScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A35301710EB1200A7B978 /* MGLWenderlichScene.m */; };
 		003A35341710EB4400A7B978 /* MGLWenderlichModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A35331710EB4400A7B978 /* MGLWenderlichModel.m */; };
+		003A353B1711472800A7B978 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 003A353A1711472700A7B978 /* QuartzCore.framework */; };
+		003A354B1711484C00A7B978 /* MGLSceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A35471711484C00A7B978 /* MGLSceneViewController.m */; };
+		003A354C1711484C00A7B978 /* MGLSceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 003A35481711484C00A7B978 /* MGLSceneViewController.xib */; };
+		003A354D1711484C00A7B978 /* MGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A354A1711484C00A7B978 /* MGLView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +72,12 @@
 		003A35301710EB1200A7B978 /* MGLWenderlichScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLWenderlichScene.m; sourceTree = "<group>"; };
 		003A35321710EB4400A7B978 /* MGLWenderlichModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLWenderlichModel.h; sourceTree = "<group>"; };
 		003A35331710EB4400A7B978 /* MGLWenderlichModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLWenderlichModel.m; sourceTree = "<group>"; };
+		003A353A1711472700A7B978 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		003A35461711484C00A7B978 /* MGLSceneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLSceneViewController.h; sourceTree = "<group>"; };
+		003A35471711484C00A7B978 /* MGLSceneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLSceneViewController.m; sourceTree = "<group>"; };
+		003A35481711484C00A7B978 /* MGLSceneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MGLSceneViewController.xib; sourceTree = "<group>"; };
+		003A35491711484C00A7B978 /* MGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLView.h; sourceTree = "<group>"; };
+		003A354A1711484C00A7B978 /* MGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,11 +85,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				003A353B1711472800A7B978 /* QuartzCore.framework in Frameworks */,
+				003A34C91710BE5F00A7B978 /* OpenGLES.framework in Frameworks */,
 				003A34C11710BE5F00A7B978 /* UIKit.framework in Frameworks */,
 				003A34C31710BE5F00A7B978 /* Foundation.framework in Frameworks */,
 				003A34C51710BE5F00A7B978 /* CoreGraphics.framework in Frameworks */,
 				003A34C71710BE5F00A7B978 /* GLKit.framework in Frameworks */,
-				003A34C91710BE5F00A7B978 /* OpenGLES.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +100,7 @@
 		003A34B41710BE5F00A7B978 = {
 			isa = PBXGroup;
 			children = (
+				003A353A1711472700A7B978 /* QuartzCore.framework */,
 				003A34CA1710BE5F00A7B978 /* MyGL */,
 				003A34BF1710BE5F00A7B978 /* Frameworks */,
 				003A34BE1710BE5F00A7B978 /* Products */,
@@ -145,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				003A34F21710C8FC00A7B978 /* Domain */,
+				003A35451711484B00A7B978 /* UI */,
 				003A34EC1710C37500A7B978 /* MainWindow */,
 			);
 			path = Classes;
@@ -181,8 +194,8 @@
 		003A34FD1710CE3B00A7B978 /* AppleSample */ = {
 			isa = PBXGroup;
 			children = (
-				003A34FE1710CE3B00A7B978 /* Shader.fsh */,
 				003A34FF1710CE3B00A7B978 /* Shader.vsh */,
+				003A34FE1710CE3B00A7B978 /* Shader.fsh */,
 			);
 			path = AppleSample;
 			sourceTree = "<group>";
@@ -247,6 +260,18 @@
 			path = Wenderlich;
 			sourceTree = "<group>";
 		};
+		003A35451711484B00A7B978 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				003A35461711484C00A7B978 /* MGLSceneViewController.h */,
+				003A35471711484C00A7B978 /* MGLSceneViewController.m */,
+				003A35481711484C00A7B978 /* MGLSceneViewController.xib */,
+				003A35491711484C00A7B978 /* MGLView.h */,
+				003A354A1711484C00A7B978 /* MGLView.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -300,6 +325,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				003A35031710CE4800A7B978 /* Shader.fsh in Resources */,
+				003A35061710CE5E00A7B978 /* Simple.vsh in Resources */,
+				003A35081710CF1E00A7B978 /* Simple.fsh in Resources */,
 				003A35041710CE4800A7B978 /* Shader.vsh in Resources */,
 				003A34CF1710BE5F00A7B978 /* InfoPlist.strings in Resources */,
 				003A34D71710BE5F00A7B978 /* Default.png in Resources */,
@@ -307,6 +334,7 @@
 				003A34DB1710BE5F00A7B978 /* Default-568h@2x.png in Resources */,
 				003A34F11710C37500A7B978 /* MGLViewController.xib in Resources */,
 				003A351A1710D3C200A7B978 /* Stuff in Resources */,
+				003A354C1711484C00A7B978 /* MGLSceneViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,13 +348,13 @@
 				003A34D11710BE5F00A7B978 /* main.m in Sources */,
 				003A34D51710BE5F00A7B978 /* MGLAppDelegate.m in Sources */,
 				003A34F01710C37500A7B978 /* MGLViewController.m in Sources */,
-				003A35061710CE5E00A7B978 /* Simple.vsh in Sources */,
-				003A35081710CF1E00A7B978 /* Simple.fsh in Sources */,
 				003A35111710D25600A7B978 /* MGLShaderProgram.m in Sources */,
 				003A352D1710EAE800A7B978 /* MGLAppleModel.m in Sources */,
 				003A352E1710EAE800A7B978 /* MGLAppleScene.m in Sources */,
 				003A35311710EB1200A7B978 /* MGLWenderlichScene.m in Sources */,
 				003A35341710EB4400A7B978 /* MGLWenderlichModel.m in Sources */,
+				003A354B1711484C00A7B978 /* MGLSceneViewController.m in Sources */,
+				003A354D1711484C00A7B978 /* MGLView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

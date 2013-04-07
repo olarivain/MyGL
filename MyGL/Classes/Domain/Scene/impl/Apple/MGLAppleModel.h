@@ -13,5 +13,7 @@
 @interface MGLAppleModel : NSObject<MGLModel>
 
 @property (nonatomic) GLKMatrix4 projectionMatrix;
+@property (nonatomic) GLKMatrix4 modelMatrix;
+@property (nonatomic) GLKMatrix3 normalMatrix;
 
 @end
