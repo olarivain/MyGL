@@ -13,7 +13,7 @@
 
 #define BUFFER_OFFSET(i) ((char *)NULL + (i))
 
-#define TEX_COORD_MAX 1
+#define TEX_COORD_MAX 4
 
 GLfloat vertices[432] =
 {

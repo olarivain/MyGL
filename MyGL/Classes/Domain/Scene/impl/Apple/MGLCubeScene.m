@@ -71,7 +71,7 @@
 
 #pragma mark - updating the scene
 - (void) update: (NSTimeInterval) timeSinceLastUpdate {
-	_baseModelViewMatrix = GLKMatrix4Rotate(_baseModelViewMatrix, -M_PI_4 / 10.0f, 1.0f, 0.0f, 0.0f);
+	_baseModelViewMatrix = GLKMatrix4Rotate(_baseModelViewMatrix, -M_PI_4 / 100.0f, 1.0f, 0.0f, 0.0f);
 	for(id<MGLModel> model in _models) {
 		// Compute the model view matrix for the object rendered with
 		GLKMatrix4 modelViewMatrix = GLKMatrix4Rotate(_baseModelViewMatrix, _rotation, 0.0f, 1.0f, 0.0f);
@@ -82,7 +82,7 @@
 		GLKMatrix3 normalMatrix = GLKMatrix3InvertAndTranspose(GLKMatrix4GetMatrix3(modelViewMatrix), NULL);
 		[model setNormalMatrix: normalMatrix];
 		
-		_rotation += (M_PI_4 / 100.0f) + (2.0f * M_PI / _models.count);
+		_rotation += (M_PI_4 / 1000.0f) + (2.0f * M_PI / _models.count);
 	}
 }
 
