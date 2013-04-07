@@ -75,7 +75,7 @@
 	for(id<MGLModel> model in _models) {
 		// Compute the model view matrix for the object rendered with
 		GLKMatrix4 modelViewMatrix = GLKMatrix4Rotate(_baseModelViewMatrix, _rotation, 0.0f, 1.0f, 0.0f);
-		modelViewMatrix = GLKMatrix4Translate(modelViewMatrix, 0.0f, 0.0f, -1.0f);
+		modelViewMatrix = GLKMatrix4Translate(modelViewMatrix, 0.0f, 0.0f, -1.15f);
 		[model setModelMatrix: modelViewMatrix];
 
 		// compute the normal matrix

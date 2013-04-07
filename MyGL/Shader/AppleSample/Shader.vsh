@@ -9,11 +9,13 @@
 attribute vec4 position;
 attribute vec3 normal;
 attribute vec4 color;
-
-varying lowp vec4 colorVarying;
+attribute vec2 texCoordIn;
 
 uniform mat4 mvpMatrix;
 uniform mat3 normalMatrix;
+
+varying lowp vec4 colorVarying;
+varying vec2 texCoordOut;
 
 void main()
 {
@@ -25,4 +27,8 @@ void main()
                  
     colorVarying = diffuseColor * nDotVP * color;
     gl_Position = mvpMatrix * position;
+	
+	texCoordOut = texCoordIn;
+	
+	
 }

@@ -98,6 +98,9 @@
 	
 	glEnable(GL_DEPTH_TEST);
 	glViewport(0, 0, self.bounds.size.width, self.bounds.size.height);
+	
+//	glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
+//	glEnable(GL_BLEND);
 }
 
 - (void)render: (CADisplayLink *) displayLink {
